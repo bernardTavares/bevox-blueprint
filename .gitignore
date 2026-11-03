@@ -1,0 +1,21 @@
+# Loop runtime state — volatile, regenerated each tick. NOT version-controlled so
+# the merge-queue's `git merge` never fails on a dirty working tree (v4.10.1).
+.loop/usage.jsonl
+.loop/iterations.jsonl
+.loop/decisions.md
+.loop/notes.md
+.loop/notes-archive.md
+.loop/improvements-log.jsonl
+.loop/.backlog-drained
+.loop/crons.md
+.loop/config/crons.md
+.loop/cron-logs/
+.loop/locks/
+.loop/worktrees/
+.loop/HALTED.md
+.loop/HUMAN_NEEDED.md
+.loop/violations.jsonl
+.loop/merge-conflicts.jsonl
+.loop/missions/
+.loop/cron-prompts/
+.loop/canary-failures.jsonl

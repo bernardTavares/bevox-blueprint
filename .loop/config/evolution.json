@@ -1,0 +1,3 @@
+{
+  "smoke_cmd": "node .loop/config/smoke.mjs"
+}

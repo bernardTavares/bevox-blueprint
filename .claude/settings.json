@@ -1,0 +1,125 @@
+{
+  "_comment": "Bevox Blueprint — Claude Code operator settings. Copy to settings.local.json and fill in real MCP keys — never commit secrets to settings.json.",
+  "permissions": {
+    "allow": [
+      "Read(docs/**)",
+      "Read(.claude/agents/**)",
+      "Read(.claude/rules/**)",
+      "Read(.loop/missions/**)",
+      "Read(.loop/decisions.md)",
+      "Read(.loop/strategy.md)",
+      "Bash(git log:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)"
+    ],
+    "deny": [
+      "Bash(schtasks:*)",
+      "Bash(crontab:*)"
+    ]
+  },
+  "mcpServers": {
+    "stripe": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@stripe/mcp-server"
+      ],
+      "env": {
+        "STRIPE_SECRET_KEY": "${STRIPE_SECRET_KEY}"
+      }
+    },
+    "google-calendar": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@google/mcp-server-calendar"
+      ],
+      "env": {
+        "GOOGLE_SERVICE_ACCOUNT_KEY": "${GOOGLE_SERVICE_ACCOUNT_KEY}"
+      }
+    },
+    "clerk": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@clerk/mcp-server"
+      ],
+      "env": {
+        "CLERK_SECRET_KEY": "${CLERK_SECRET_KEY}"
+      }
+    },
+    "meta-ads": {
+      "command": "node",
+      "args": [
+        "${PROJECT_ROOT}/mcp-servers/meta-ads/index.js"
+      ],
+      "env": {
+        "META_ADS_ACCESS_TOKEN": "${META_ADS_ACCESS_TOKEN}",
+        "META_ADS_ACCOUNT_ID": "${META_ADS_ACCOUNT_ID}"
+      }
+    },
+    "serpapi": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "serpapi-mcp"
+      ],
+      "env": {
+        "SERPAPI_KEY": "${SERPAPI_KEY}"
+      }
+    },
+    "reddit": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-server-reddit"
+      ],
+      "env": {
+        "REDDIT_CLIENT_ID": "${REDDIT_CLIENT_ID}",
+        "REDDIT_CLIENT_SECRET": "${REDDIT_CLIENT_SECRET}"
+      }
+    },
+    "cms-site": {
+      "command": "node",
+      "args": [
+        "${PROJECT_ROOT}/mcp-servers/cms-site/index.js"
+      ],
+      "env": {
+        "CMS_API_KEY": "${CMS_API_KEY}",
+        "CMS_SITE_ID": "${CMS_SITE_ID}"
+      }
+    },
+    "openai": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-server-openai"
+      ],
+      "env": {
+        "OPENAI_API_KEY": "${OPENAI_API_KEY}"
+      }
+    },
+    "perplexity": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "perplexity-mcp"
+      ],
+      "env": {
+        "PERPLEXITY_API_KEY": "${PERPLEXITY_API_KEY}"
+      }
+    }
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/SessionStart.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
