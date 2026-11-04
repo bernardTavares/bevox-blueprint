@@ -1,10 +1,16 @@
 # bevox-blueprint
 
+[![license](https://img.shields.io/badge/license-FSL--1.1--MIT-blue)](./LICENSE.md) ![language](https://img.shields.io/github/languages/top/bernardTavares/bevox-blueprint) ![status](https://img.shields.io/badge/status-blueprint-orange)
+
+![bevox-blueprint](docs/assets/social-card.png)
+
+> Part of the [4-layer AI-first company series](https://github.com/bernardTavares). License: FSL-1.1-MIT (source-available, converts to MIT after 2 years). Contributors: Henrique Melo de Araújo and Marcus Vinicius.
+
 **The blueprint of an AI-first company: 63 Claude Code agents across 9 departments, plus the org design that makes them coherent.**
 
-Bevox was an AI-first startup building an AI secretary for appointment-based small businesses in Brazil. This repo designs it as an *agentic enterprise*: one human, and every department and role a dispatchable Claude Code subagent with a written mission, decision authority, KPIs and reporting lines.
+Bevox is an AI-first company building an AI secretary for appointment-based small businesses in Brazil. This repo designs it as an *agentic enterprise*: one human, and every department and role a dispatchable Claude Code subagent with a written mission, decision authority, KPIs and reporting lines.
 
-> **Status: blueprint.** Bevox never got its first customer. The org was deliberately designed for the stage it was aiming at ("post-PMF, 10–50 paying customers"), so the role specs talk about real customer load, unit economics and incidents. Read those as the design target, not as traction. The product modules they mention were prototypes. Some, like [bevox-meta-api](https://github.com/bernardTavares/bevox-meta-api), ran in production for internal use only.
+> **Status: blueprint.** Bevox has no paying customers. The org was deliberately designed for the stage it is aiming at ("post-PMF, 10–50 paying customers"), so the role specs talk about real customer load, unit economics and incidents. Read those as the design target, not as traction. The product modules they mention are prototypes. Some, like [bevox-meta-api](https://github.com/bernardTavares/bevox-meta-api), ran in production for internal use only.
 
 ## What's inside
 
@@ -66,7 +72,7 @@ Bevox was an AI-first startup building an AI secretary for appointment-based sma
 
   This repo was republished with a fresh history, so their work is credited here.
 
-The docs are in English. The agents' instructions assume Portuguese for customer-facing communication, because Bevox targeted Brazilian businesses.
+The docs are in English. The agents' instructions assume Portuguese for customer-facing communication, because Bevox targets Brazilian businesses.
 
 ## Using it
 
